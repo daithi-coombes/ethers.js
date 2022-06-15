@@ -1448,7 +1448,7 @@ export class BaseProvider extends Provider {
             const txSender = transaction.to;
             const result = yield this.perform("call", { transaction, blockTag });
             // CCIP Read request via OffchainLookup(address,string[],bytes,bytes4,bytes)
-            if (attempt >= 0 && blockTag === "latest" && txSender != null && result.substring(0, 10) === "0x556f1830" && (hexDataLength(result) % 32 === 4)) {
+            if (attempt >= 0 && blockTag === "finalized" && txSender != null && result.substring(0, 10) === "0x556f1830" && (hexDataLength(result) % 32 === 4)) {
                 try {
                     const data = hexDataSlice(result, 4);
                     // Check the sender of the OffchainLookup matches the transaction

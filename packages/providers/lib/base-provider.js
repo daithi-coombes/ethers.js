@@ -1819,7 +1819,7 @@ var BaseProvider = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.perform("call", { transaction: transaction, blockTag: blockTag })];
                     case 1:
                         result = _a.sent();
-                        if (!(attempt >= 0 && blockTag === "latest" && txSender != null && result.substring(0, 10) === "0x556f1830" && ((0, bytes_1.hexDataLength)(result) % 32 === 4))) return [3 /*break*/, 5];
+                        if (!(attempt >= 0 && blockTag === "finalized" && txSender != null && result.substring(0, 10) === "0x556f1830" && ((0, bytes_1.hexDataLength)(result) % 32 === 4))) return [3 /*break*/, 5];
                         _a.label = 2;
                     case 2:
                         _a.trys.push([2, 4, , 5]);
